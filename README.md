@@ -19,7 +19,7 @@ ICP开发入门课程第二课课程作业
 
 2、把函数封装在一个canister里面  
 
-    1) main.mo 在canister中封装 public func qsort(arr: [Int]): async [Int]方法,
+    1) 在main.mo中实现一个actor，公共接口是public func qsort(arr: [Int]): async [Int]。
     
     调用Qs快排封装，部署在本地和主网下测试运行。
 
