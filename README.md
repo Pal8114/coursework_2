@@ -11,7 +11,7 @@ ICP开发入门课程第二课课程作业
 
 2、把函数封装在一个canister里面  
 
-public func qsort(arr: [Int]): async [Int]  
+    public func qsort(arr: [Int]): async [Int]  
 
 3、部署到主网  
 
