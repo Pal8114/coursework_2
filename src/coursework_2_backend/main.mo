@@ -16,5 +16,5 @@ actor {
     var newArr:[var Int] = Array.thaw(arr);
     Qs.quicksort(newArr);
   };
-  
+
 };
