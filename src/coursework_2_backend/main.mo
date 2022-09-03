@@ -6,9 +6,12 @@ import Nat "mo:base/Nat";
 actor {
 
   public func qsort(arr:[Int]) : async [Int] {
+    if (2 > arr.size()) {
+      return arr;
+    };
     var newArr:[var Int] = Array.thaw(arr);
     let qs = QS();
-    qs.quicksort(newArr, 0, newArr.size()-1);
+    qs.quicksort(newArr, 0, newArr.size() - 1);
     Array.freeze(newArr)
   };
   
