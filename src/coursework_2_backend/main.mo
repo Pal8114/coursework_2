@@ -2,57 +2,30 @@ import Array "mo:base/Array";
 import Debug "mo:base/Debug";
 import Int "mo:base/Int";
 import Nat "mo:base/Nat";
+import Qs "./Qs";
 
 actor {
 
+  /**
+   * Canister封装快排
+   */
   public func qsort(arr:[Int]) : async [Int] {
     if (2 > arr.size()) {
       return arr;
     };
     var newArr:[var Int] = Array.thaw(arr);
-    let qs = QS();
-    qs.quicksort(newArr, 0, newArr.size() - 1);
-    Array.freeze(newArr)
+    Qs.quicksort(newArr);
   };
-  
-  class QS() {
-    public func quicksort(a : [var Int], lo : Nat, hi : Nat) {
-      if (lo < hi) {
-        let p = partition(a, lo, hi);
-        quicksort(a, lo, p);
-        quicksort(a, p + 1, hi); 
-      }
+
+  /**
+   * Moc 测试
+   */
+  let testArray:[var Int] = [var 18, 8, 1, 33, 77, 18, 23, 99, 8];
+  if (1 < testArray.size()) {
+    let newArray = Qs.quicksort(testArray);
+    for (c in newArray.vals()) {
+      Debug.print(Int.toText(c));
     };
+  }
 
-    func swap(a : [var Int], i : Nat, j : Nat) {
-      let temp = a[i];
-      a[i] := a[j];
-      a[j] := temp;
-    };
-
-    func cmpi(i : Int, j : Int) : Int {
-      i - j;
-    };
-
-    func partition(a : [var Int], lo : Nat, hi : Nat) : Nat {
-      let pivot = a[lo];
-      var i = lo;
-      var j = hi;
-      loop {
-        while (cmpi(a[i], pivot) < 0) {
-          i += 1;
-        };
-
-        while (cmpi(a[j], pivot) > 0) {
-          j -= 1;
-        };
-
-        if (i >= j) {
-          return j;
-        };
-
-        swap(a, i, j);
-      };
-    };
-  };
 };

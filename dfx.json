@@ -5,15 +5,6 @@
     "coursework_2_backend": {
       "type": "motoko",
       "main": "src/coursework_2_backend/main.mo"
-    },
-    "coursework_2_frontend": {
-      "type": "assets",
-      "source": [
-        "src/coursework_2_frontend/assets"
-      ],
-      "dependencies": [
-        "coursework_2_backend"
-      ]
     }
   },
   "defaults": {
