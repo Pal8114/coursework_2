@@ -2,7 +2,6 @@ import Array "mo:base/Array";
 import Debug "mo:base/Debug";
 import Int "mo:base/Int";
 import Nat "mo:base/Nat";
-import Text "mo:base/Iter";
 
 actor {
 
