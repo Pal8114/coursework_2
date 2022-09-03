@@ -9,11 +9,11 @@ ICP开发入门课程第二课课程作业
 
 1、用moc调试运行  
 
-    1）封装 module Qs.mo
+    1）封装 module Qs.mo。实现 quicksort : [var Int] -> () 公共方法。
 
-    2）main.mo 中加入 quicksort : [var Int] -> () 方法，调用Qs快排封装，在Moc下测试运行。
+    2）在test.mo中加入测试用例，调用Qs封装，在Moc下测试运行。
 
-    3）执行 moc --package base $(dfx cache show)/base -r src/coursework_2_backend/main.mo
+    3）执行 moc --package base $(dfx cache show)/base -r src/coursework_2_backend/test.mo
     
     Debug输出测试结果
 
@@ -31,7 +31,9 @@ ICP开发入门课程第二课课程作业
     
     1）dfx deploy --network ic --with-cycles 1000000000000
 
-    2）本次部署删除的前端配置，只部署了后端。
+    2) coursework_2_backend: https://a4gq6-oaaaa-aaaab-qaa4q-cai.raw.ic0.app/?id=jyiiv-giaaa-aaaam-aaqua-cai
+
+    2）本次部署删除了前端工程，只部署了后端工程
 
 4、使用主网的Candid UI 调试运行 
 
